@@ -13,7 +13,8 @@ public class HitProcessor extends BaseProcessor {
 
     @Override
     public void Processor() {
-        System.out.println("HitProcessor 执行 Processor");
+        System.out.println("HitProcessor 执行 Processor 开始");
         super.Processor();
+        System.out.println("HitProcessor 执行 Processor 结束");
     }
 }

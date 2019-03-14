@@ -13,7 +13,8 @@ public class PullProcessor extends BaseProcessor {
 
     @Override
     public void Processor() {
-        System.out.println("PullProcessor 执行 Processor");
+        System.out.println("PullProcessor 执行 Processor 开始");
         super.Processor();
+        System.out.println("PullProcessor 执行 Processor 结束");
     }
 }

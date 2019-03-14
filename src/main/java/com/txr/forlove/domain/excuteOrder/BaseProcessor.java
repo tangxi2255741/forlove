@@ -14,7 +14,8 @@ public abstract class BaseProcessor implements MyProcessor{
 
     @Override
     public void Processor() {
+        System.out.println("BaseProcessor 执行 Processor 开始");
         myProcessor.Processor();
-        System.out.println("BaseProcessor 执行 Processor");
+        System.out.println("BaseProcessor 执行 Processor 结束");
     }
 }

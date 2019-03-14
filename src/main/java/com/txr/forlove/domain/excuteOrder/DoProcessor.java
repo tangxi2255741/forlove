@@ -8,5 +8,7 @@ public class DoProcessor {
 
     public static void main(String[] args) {
         new PullProcessor(new HitProcessor(new ChoseProcessor())).Processor();
+        System.out.println("-----------------------------");
+        new PullProcessor(new ChoseProcessor()).Processor();
     }
 }
