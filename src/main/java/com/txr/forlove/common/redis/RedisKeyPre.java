@@ -1,7 +1,7 @@
 package com.txr.forlove.common.redis;
 
-
-import com.jd.b2b.restrictsale.utils.StringUtil;
+import com.txr.forlove.common.constants.Separator;
+import com.txr.forlove.common.utils.StringUtil;
 
 /**
  * Created by zhangjunyong6 2018/12/18 13:55

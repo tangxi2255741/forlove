@@ -3,8 +3,9 @@
  */
 package com.txr.forlove.common.vein;
 
-import com.jd.ka.vein.domain.Context;
-import com.jd.ka.vein.task.SimpleJob;
+
+import com.txr.forlove.common.vein.domain.Context;
+import com.txr.forlove.common.vein.task.SimpleJob;
 
 import java.util.List;
 

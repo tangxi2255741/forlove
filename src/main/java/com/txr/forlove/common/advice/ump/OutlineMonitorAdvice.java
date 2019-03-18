@@ -1,6 +1,6 @@
 package com.txr.forlove.common.advice.ump;
 
-import com.jd.b2b.restrictsale.cbi.common.utils.MessageFormats;
+import com.txr.forlove.common.utils.MessageFormats;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.reflect.MethodSignature;
 

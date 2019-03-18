@@ -3,11 +3,11 @@
  */
 package com.txr.forlove.common.vein.export;
 
-import com.jd.ka.vein.core.EventListener;
-import com.jd.ka.vein.domain.JobConfig;
-import com.jd.ka.vein.export.out.JFSOutputExcelHandler;
-import com.jd.ka.vein.export.out.OutputExcelHandler;
-import com.jd.ka.vein.export.out.SimpleOutputExcelHandler;
+import com.txr.forlove.common.vein.EventListener;
+import com.txr.forlove.common.vein.domain.JobConfig;
+import com.txr.forlove.common.vein.export.out.JFSOutputExcelHandler;
+import com.txr.forlove.common.vein.export.out.OutputExcelHandler;
+import com.txr.forlove.common.vein.export.out.SimpleOutputExcelHandler;
 
 import java.io.OutputStream;
 

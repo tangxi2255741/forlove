@@ -1,7 +1,7 @@
 package com.txr.forlove.common.advice.log;
 
-import com.jd.b2b.restrictsale.cbi.common.exception.BizErrorCode;
-import com.jd.b2b.restrictsale.domain.RPCResult;
+import com.txr.forlove.common.exception.ErrorCode;
+import com.txr.forlove.domain.rpc.RPCResult;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 
@@ -55,10 +55,10 @@ public class ProvideServiceLogAdvice extends LogRecordAdvice {
 			proceed = point.proceed();
 		}catch (SQLException e){
 			logger.error("ProvideException->SQLException.uuid={}", uuid, e);
-			proceed = RPCResult.failure(BizErrorCode.DB_ACCESS_ERROR.getCode(), BizErrorCode.DB_ACCESS_ERROR.getDesc(), uuid);
+			proceed = RPCResult.failure(ErrorCode.DB_ACCESS_ERROR.getCode(), ErrorCode.DB_ACCESS_ERROR.getDesc(), uuid);
 		}catch (Exception e){
 			logger.error("ProvideException.uuid={}", uuid, e);
-			proceed = RPCResult.failure(BizErrorCode.SYSTEM_ERROR.getCode(), BizErrorCode.SYSTEM_ERROR.getDesc(), uuid);
+			proceed = RPCResult.failure(ErrorCode.SYSTEM_ERROR.getCode(), ErrorCode.SYSTEM_ERROR.getDesc(), uuid);
 		}
 
 		return proceed;

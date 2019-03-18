@@ -3,14 +3,14 @@
  */
 package com.txr.forlove.common.vein.task;
 
-import com.jd.ka.vein.ProgressCtrlCenter;
-import com.jd.ka.vein.core.EventListener;
-import com.jd.ka.vein.domain.Context;
-import com.jd.ka.vein.domain.Event;
-import com.jd.ka.vein.domain.JobConfig;
-import com.jd.ka.vein.domain.Lock;
-import com.jd.ka.vein.exception.JobException;
-import com.jd.ka.vein.exception.LockException;
+import com.txr.forlove.common.vein.EventListener;
+import com.txr.forlove.common.vein.ProgressCtrlCenter;
+import com.txr.forlove.common.vein.domain.Context;
+import com.txr.forlove.common.vein.domain.Event;
+import com.txr.forlove.common.vein.domain.JobConfig;
+import com.txr.forlove.common.vein.domain.Lock;
+import com.txr.forlove.common.vein.exception.JobException;
+import com.txr.forlove.common.vein.exception.LockException;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -201,8 +201,8 @@ public class JobActuator<T> implements Runnable{
      * @param shardId 对应的子任务
      * @return
      */
-    public static JobActuator fork(JobConfig cfg,EventListener eventListener,ProgressCtrlCenter progressCtrlCenter, Job job,
-                                   String module, String shardId,Map<String,Object> params) {
+    public static JobActuator fork(JobConfig cfg, EventListener eventListener, ProgressCtrlCenter progressCtrlCenter, Job job,
+                                   String module, String shardId, Map<String,Object> params) {
         JobActuator task = new JobActuator(module,shardId,job,progressCtrlCenter);
         if(cfg == null){
             cfg = new JobConfig();

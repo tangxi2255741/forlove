@@ -2,9 +2,8 @@
  * Copyright(C) 2004-2016 JD.COM All Right Reserved
  */
 package com.txr.forlove.common.vein;
-
-import com.jd.ka.vein.domain.Lock;
-import com.jd.ka.vein.domain.ProgressResult;
+import com.txr.forlove.common.vein.domain.Lock;
+import com.txr.forlove.common.vein.domain.ProgressResult;
 
 import java.util.Map;
 

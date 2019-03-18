@@ -3,7 +3,8 @@
  */
 package com.txr.forlove.common.vein.exception;
 
-import com.jd.ka.vein.domain.Lock;
+
+import com.txr.forlove.common.vein.domain.Lock;
 
 /**
  * <p> </p>

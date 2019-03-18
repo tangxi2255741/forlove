@@ -1,7 +1,7 @@
 package com.txr.forlove.common.advice.log;
 
-import com.jd.b2b.restrictsale.cbi.common.advice.AdviceSupport;
-import com.jd.b2b.restrictsale.cbi.common.logs.JsonLog;
+import com.txr.forlove.common.advice.AdviceSupport;
+import com.txr.forlove.common.utils.JsonLog;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.LocalVariableTableParameterNameDiscoverer;

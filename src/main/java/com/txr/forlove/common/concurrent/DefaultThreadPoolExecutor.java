@@ -1,6 +1,6 @@
 package com.txr.forlove.common.concurrent;
 
-import com.jd.b2b.restrictsale.cbi.common.logs.B2bLogger;
+import com.txr.forlove.common.advice.log.B2bLogger;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;

@@ -3,13 +3,13 @@
  */
 package com.txr.forlove.common.vein.task;
 
-import com.jd.ka.vein.ProgressCtrlCenter;
-import com.jd.ka.vein.ShardingJob;
-import com.jd.ka.vein.core.EventListener;
-import com.jd.ka.vein.domain.JobConfig;
-import com.jd.ka.vein.domain.Lock;
-import com.jd.ka.vein.domain.ProgressResult;
-import com.jd.ka.vein.exception.JobException;
+import com.txr.forlove.common.vein.EventListener;
+import com.txr.forlove.common.vein.ProgressCtrlCenter;
+import com.txr.forlove.common.vein.ShardingJob;
+import com.txr.forlove.common.vein.domain.JobConfig;
+import com.txr.forlove.common.vein.domain.Lock;
+import com.txr.forlove.common.vein.domain.ProgressResult;
+import com.txr.forlove.common.vein.exception.JobException;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -149,7 +149,7 @@ public class JobDirector implements InitializingBean {
      * @param shardId
      * @return
      */
-    public ProgressResult getProgress(String module,String shardId) throws Exception {
+    public ProgressResult getProgress(String module, String shardId) throws Exception {
         return progressCtrlCenter.getProgress(module,shardId);
     }
 
@@ -166,7 +166,7 @@ public class JobDirector implements InitializingBean {
      * 查询锁信息
      * @param shardId
      */
-    public Lock getLock(String module,String shardId) throws Exception {
+    public Lock getLock(String module, String shardId) throws Exception {
         return progressCtrlCenter.getLock(module, shardId);
     }
 

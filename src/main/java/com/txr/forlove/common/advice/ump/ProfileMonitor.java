@@ -1,14 +1,11 @@
 package com.txr.forlove.common.advice.ump;
 
-import com.jd.b2b.restrictsale.cbi.common.advice.AdviceSupport;
-import com.jd.b2b.restrictsale.cbi.common.ump.UmpProfiler;
-import com.jd.b2b.restrictsale.cbi.common.utils.MessageFormats;
-import com.jd.ump.profiler.CallerInfo;
-import com.jd.ump.profiler.proxy.Profiler;
-import org.apache.xmlbeans.impl.piccolo.util.DuplicateKeyException;
+import com.txr.forlove.common.advice.AdviceSupport;
+import com.txr.forlove.common.utils.MessageFormats;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.dao.DuplicateKeyException;
 
 import java.lang.reflect.Method;
 
@@ -41,13 +38,13 @@ public abstract class ProfileMonitor extends AdviceSupport {
 	}
 
 	public Object doAround(ProceedingJoinPoint joinPoint) throws Throwable {
-		CallerInfo callerInfo = null;
+//		CallerInfo callerInfo = null;
 		try {
 			String monitorKey = getUmpKey(joinPoint);
 			if(logger.isDebugEnabled()){
 				logger.debug("监控key : {}", monitorKey);
 			}
-			callerInfo = UmpProfiler.registerInfo(monitorKey, false, true);
+//			callerInfo = UmpProfiler.registerInfo(monitorKey, false, true);
 		} catch (Exception e) {
 			logger.error("获取Ump监控Key异常!-joinPoint: {}", joinPoint, e);
 		} 
@@ -57,14 +54,14 @@ public abstract class ProfileMonitor extends AdviceSupport {
 		}catch (DuplicateKeyException dke){// 主键冲突异常不降低可用率
 			throw dke;
 		}catch (Exception e) {
-			if (callerInfo != null) {
-				Profiler.functionError(callerInfo);
-			}
+//			if (callerInfo != null) {
+//				Profiler.functionError(callerInfo);
+//			}
 			throw e;
 		} finally {
-			if (callerInfo != null) {
-				Profiler.registerInfoEnd(callerInfo);
-			}
+//			if (callerInfo != null) {
+//				Profiler.registerInfoEnd(callerInfo);
+//			}
 		}
 		return resultVal;
 	}

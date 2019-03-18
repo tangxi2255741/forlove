@@ -136,9 +136,9 @@ public class IpUtils {
 		String serverName = "";
 		try {
 			serverName = InetAddress.getLocalHost().getHostName();
-			LOG.info("获取服务器名称:" + serverName);
+			logger.info("获取服务器名称:" + serverName);
 		} catch (UnknownHostException e) {
-			LOG.error("获取服务器名称异常", e);
+			logger.error("获取服务器名称异常", e);
 		}
 		return serverName;
 	}
@@ -150,9 +150,9 @@ public class IpUtils {
 		String serverIP = "";
 		try {
 			serverIP = InetAddress.getLocalHost().getHostAddress();
-			LOG.info("获取服务器IP:" + serverIP);
+			logger.info("获取服务器IP:" + serverIP);
 		} catch (UnknownHostException e) {
-			LOG.error("获取服务器IP异常", e);
+			logger.error("获取服务器IP异常", e);
 		}
 		return serverIP;
 	}
@@ -178,7 +178,7 @@ public class IpUtils {
 
 			return ipList;
 		} catch (Exception e) {
-			LOG.error("", e);
+			logger.error("", e);
 			throw new RuntimeException(e);
 		}
 	}

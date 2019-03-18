@@ -1,9 +1,9 @@
 package com.txr.forlove.common.handler;
 
 import com.google.common.collect.Sets;
-import com.jd.b2b.restrictsale.cbi.common.concurrent.ExecutorSerivce;
-import com.jd.b2b.restrictsale.exception.AppException;
-import com.jd.b2b.restrictsale.exception.SystemException;
+import com.txr.forlove.common.concurrent.ExecutorSerivce;
+import com.txr.forlove.common.exception.AppException;
+import com.txr.forlove.common.exception.SystemException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.CollectionUtils;

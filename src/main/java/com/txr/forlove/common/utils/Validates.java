@@ -1,7 +1,7 @@
 package com.txr.forlove.common.utils;
 
-import com.jd.b2b.restrictsale.exception.ErrorCode;
-import com.jd.b2b.restrictsale.exception.ValidateException;
+import com.txr.forlove.common.exception.ErrorCode;
+import com.txr.forlove.common.exception.ValidateException;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 

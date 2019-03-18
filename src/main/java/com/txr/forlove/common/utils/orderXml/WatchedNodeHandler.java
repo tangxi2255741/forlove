@@ -1,11 +1,11 @@
 package com.txr.forlove.common.utils.orderXml;
 
-import org.apache.http.annotation.NotThreadSafe;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 import org.xml.sax.helpers.DefaultHandler;
 
+import javax.annotation.concurrent.NotThreadSafe;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;

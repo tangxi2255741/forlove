@@ -16,7 +16,7 @@ public class JsonLog {
 	static {
 		
 		//Gson instances are Thread-safe so you can reuse them freely across multiple threads. 
-		gson = new GsonBuilder()  
+		gson = new GsonBuilder()
 		  .setDateFormat("yyyy-MM-dd HH:mm:ss")
 		  .registerTypeHierarchyAdapter(Class.class, new ClassSerializer())
 		  .registerTypeHierarchyAdapter(byte[].class, new ByteArraySerializer())

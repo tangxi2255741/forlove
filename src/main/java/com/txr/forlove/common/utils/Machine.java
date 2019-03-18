@@ -3,7 +3,7 @@
  */
 package com.txr.forlove.common.utils;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.management.ManagementFactory;
 import java.net.InetAddress;

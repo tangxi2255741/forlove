@@ -1,6 +1,7 @@
 package com.txr.forlove.common.handler;
 
-import com.jd.b2b.restrictsale.cbi.common.concurrent.ExecutorSerivce;
+
+import com.txr.forlove.common.concurrent.ExecutorSerivce;
 
 import java.util.Set;
 import java.util.concurrent.Future;

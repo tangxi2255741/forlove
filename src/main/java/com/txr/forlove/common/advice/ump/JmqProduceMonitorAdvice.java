@@ -1,7 +1,6 @@
 package com.txr.forlove.common.advice.ump;
 
-import com.jd.b2b.restrictsale.cbi.common.utils.MessageFormats;
-import com.jd.jmq.common.message.Message;
+import com.txr.forlove.common.utils.MessageFormats;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.reflect.MethodSignature;
 
@@ -27,25 +26,25 @@ public class JmqProduceMonitorAdvice extends ProfileMonitor {
 	@Override
 	protected String getUmpKey(ProceedingJoinPoint joinPoint) {
 		String topic = "unKnown";
-		try {
-			Object[] args = joinPoint.getArgs();
-			if (args != null && args.length > 0) {
-				Object arg = args[0];
-				if (arg instanceof Message) {
-					topic = ((Message) arg).getTopic();
-				} else if (arg instanceof List) {
-					List<Object> argList = ((List) arg);
-					if (argList != null && !argList.isEmpty()) {
-						Object a = argList.get(0);
-						if (a instanceof Message) {
-							topic = ((Message) a).getTopic();
-						}
-					}
-				}
-			}
-		} catch (Exception e) {
-			topic = "ErrorKey";
-		}
+//		try {
+//			Object[] args = joinPoint.getArgs();
+//			if (args != null && args.length > 0) {
+//				Object arg = args[0];
+//				if (arg instanceof Message) {
+//					topic = ((Message) arg).getTopic();
+//				} else if (arg instanceof List) {
+//					List<Object> argList = ((List) arg);
+//					if (argList != null && !argList.isEmpty()) {
+//						Object a = argList.get(0);
+//						if (a instanceof Message) {
+//							topic = ((Message) a).getTopic();
+//						}
+//					}
+//				}
+//			}
+//		} catch (Exception e) {
+//			topic = "ErrorKey";
+//		}
 
 		return MessageFormats.format(KEY_PATTERN, getType().getType(), topic);
 	}

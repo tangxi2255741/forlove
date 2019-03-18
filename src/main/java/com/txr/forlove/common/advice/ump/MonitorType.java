@@ -1,8 +1,8 @@
 package com.txr.forlove.common.advice.ump;
 
-import com.jd.b2b.restrictsale.cbi.common.enums.Enums;
-import com.jd.b2b.restrictsale.cbi.common.enums.StringType;
-import com.jd.b2b.restrictsale.cbi.common.ump.UmpConstants;
+import com.txr.forlove.common.constants.UmpConstants;
+import com.txr.forlove.common.enums.Enums;
+import com.txr.forlove.common.enums.StringType;
 
 import java.util.Map;
 

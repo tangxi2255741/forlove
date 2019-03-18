@@ -3,13 +3,12 @@
  */
 package com.txr.forlove.common.vein.export;
 
-import org.apache.commons.io.FilenameUtils;
-import org.apache.commons.lang.RandomStringUtils;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.FastDateFormat;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFRichTextString;
-
+import org.apache.commons.io.FilenameUtils;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.UUID;
@@ -33,7 +32,7 @@ public class ExcelUtils {
      */
     public static void createCell(CellStyle style, Row row, int column, Object content){
         Cell cell = row.createCell(column);
-        cell.setCellType(Cell.CELL_TYPE_STRING);
+        cell.setCellType(CellType.STRING);
         cell.setCellStyle(style);
         String val = "";
         if(content != null){

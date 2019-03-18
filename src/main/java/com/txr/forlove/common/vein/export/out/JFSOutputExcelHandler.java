@@ -3,8 +3,8 @@
  */
 package com.txr.forlove.common.vein.export.out;
 
-import com.jd.ka.vein.export.FileInfo;
-import com.jd.ka.vein.export.StoreCenter;
+import com.txr.forlove.common.vein.export.FileInfo;
+import com.txr.forlove.common.vein.export.StoreCenter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

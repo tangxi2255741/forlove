@@ -1,6 +1,6 @@
 package com.txr.forlove.common.handler;
 
-import com.jd.b2b.restrictsale.exception.AppException;
+import com.txr.forlove.common.exception.AppException;
 import org.springframework.core.Ordered;
 
 /**

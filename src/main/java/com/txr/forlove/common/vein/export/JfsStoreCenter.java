@@ -3,12 +3,6 @@
  */
 package com.txr.forlove.common.vein.export;
 
-import com.jcloud.jss.JingdongStorageService;
-import com.jcloud.jss.domain.ObjectListing;
-import com.jcloud.jss.domain.ObjectSummary;
-import com.jcloud.jss.service.BucketService;
-import com.jcloud.jss.service.ObjectService;
-import com.jd.ka.vein.exception.ExportException;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.FastDateFormat;
 import org.slf4j.Logger;
@@ -28,13 +22,13 @@ public class JfsStoreCenter implements StoreCenter {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(JfsStoreCenter.class);
 
-    private JingdongStorageService jss;
+//    private JingdongStorageService jss;
     private String bucket;
     private int presignedTime = -1;
 
-    public void setJss(JingdongStorageService jss) {
-        this.jss = jss;
-    }
+//    public void setJss(JingdongStorageService jss) {
+//        this.jss = jss;
+//    }
 
     public void setBucket(String bucket) {
         this.bucket = bucket;
@@ -48,23 +42,24 @@ public class JfsStoreCenter implements StoreCenter {
 
     @Override
     public void storeFile(String url, File file) {
-        String ps = jss.bucket(bucket).object(url).entity(file).put();
-        LOGGER.info("put request:"+ps);
+//        String ps = jss.bucket(bucket).object(url).entity(file).put();
+//        LOGGER.info("put request:"+ps);
     }
 
     @Override
     public URI downFile(String url) {
         LOGGER.info("downFile>>url={}",url);
-        ObjectService jf = jss.bucket(bucket).object(url);
-        if(jf.exist()){
-            if(presignedTime > 0) {
-                return jf.generatePresignedUrl(presignedTime);
-            } else {
-                return jf.generatePresignedUrl();
-            }
-        }else{
-            throw new ExportException("文件还未生成，请等待！");
-        }
+//        ObjectService jf = jss.bucket(bucket).object(url);
+//        if(jf.exist()){
+//            if(presignedTime > 0) {
+//                return jf.generatePresignedUrl(presignedTime);
+//            } else {
+//                return jf.generatePresignedUrl();
+//            }
+//        }else{
+//            throw new ExportException("文件还未生成，请等待！");
+//        }
+        return null;
     }
 
     @Override
@@ -78,36 +73,36 @@ public class JfsStoreCenter implements StoreCenter {
             path = path + module+"/";
         }
 
-        BucketService erpBs  =  jss.bucket(bucket).path(path);
-        ObjectListing objectListTmp = erpBs.listObject();
-        List<ObjectSummary> listTmp = objectListTmp.getObjectSummaries();
+//        BucketService erpBs  =  jss.bucket(bucket).path(path);
+//        ObjectListing objectListTmp = erpBs.listObject();
+//        List<ObjectSummary> listTmp = objectListTmp.getObjectSummaries();
         List<Map<String, Object>> list = new ArrayList<Map<String,Object>>();
-        for(ObjectSummary os : listTmp){
-            String key = os.getKey();
-            String[] keys = key.split("/");
-            String m = "";
-            String u = "";
-            String k = key;
-            if(keys != null){
-                if(keys.length == 3){
-                    m = keys[0];
-                    u = keys[1];
-                    k = keys[2];
-                } else if(keys.length == 2){
-                    m = keys[0];
-                    k = keys[1];
-                } else {
-                    k = key;
-                }
-            }
-            Map<String, Object> map = new HashMap<String, Object>();
-            map.put("module", m);
-            map.put("user", u);
-            map.put("key", k);
-            map.put("size", fmSize(os.getSize()));
-            map.put("lastModified", fmDate(os.getLastModified()));
-            list.add(map);
-        }
+//        for(ObjectSummary os : listTmp){
+//            String key = os.getKey();
+//            String[] keys = key.split("/");
+//            String m = "";
+//            String u = "";
+//            String k = key;
+//            if(keys != null){
+//                if(keys.length == 3){
+//                    m = keys[0];
+//                    u = keys[1];
+//                    k = keys[2];
+//                } else if(keys.length == 2){
+//                    m = keys[0];
+//                    k = keys[1];
+//                } else {
+//                    k = key;
+//                }
+//            }
+//            Map<String, Object> map = new HashMap<String, Object>();
+//            map.put("module", m);
+//            map.put("user", u);
+//            map.put("key", k);
+////            map.put("size", fmSize(os.getSize()));
+////            map.put("lastModified", fmDate(os.getLastModified()));
+//            list.add(map);
+//        }
         return list;
     }
 
@@ -140,9 +135,9 @@ public class JfsStoreCenter implements StoreCenter {
     @Override
     public void deleteStoreFile(String url) {
         LOGGER.info("deleteStoreFile>>url={}",url);
-        ObjectService jf = jss.bucket(bucket).object(url);
-        if(jf.exist()){
-            jf.delete();
-        }
+//        ObjectService jf = jss.bucket(bucket).object(url);
+//        if(jf.exist()){
+//            jf.delete();
+//        }
     }
 }

@@ -2,18 +2,15 @@
  * Copyright(C) 2004-2016 JD.COM All Right Reserved
  */
 package com.txr.forlove.common.vein.export;
-
+import com.txr.forlove.common.vein.EventListener;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
-import com.jcloud.jss.exception.StorageClientException;
-import com.jd.ka.vein.ProgressCtrlCenter;
-import com.jd.ka.vein.domain.Context;
-import com.jd.ka.vein.domain.Event;
-import com.jd.ka.vein.domain.JobConfig;
-import com.jd.ka.vein.domain.ProgressResult;
-import com.jd.ka.vein.export.out.JFSOutputExcelHandler;
-import com.jd.ka.vein.export.out.OutputExcelHandler;
-import com.jd.ump.profiler.CallerInfo;
-import com.jd.ump.profiler.proxy.Profiler;
+import com.txr.forlove.common.vein.ProgressCtrlCenter;
+import com.txr.forlove.common.vein.domain.Context;
+import com.txr.forlove.common.vein.domain.Event;
+import com.txr.forlove.common.vein.domain.JobConfig;
+import com.txr.forlove.common.vein.domain.ProgressResult;
+import com.txr.forlove.common.vein.export.out.JFSOutputExcelHandler;
+import com.txr.forlove.common.vein.export.out.OutputExcelHandler;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.poi.ss.SpreadsheetVersion;
 import org.apache.poi.ss.usermodel.CellStyle;
@@ -249,11 +246,11 @@ public class ExcelExportHandler implements InitializingBean {
     private  <T> void execExport(boolean sync,FileInfo fileInfo,final OutputExcelHandler outHandler,DataFetchIterator<T> iterator,
                                  WriteRowHandler rowHandler,final EventListener eventListener,
                                  final JobConfig cfg,final Context ctx){
-        CallerInfo callerInfo = null;
+//        CallerInfo callerInfo = null;
         String module = fileInfo.getModule();
         if(enableUmp) {
-            callerInfo = Profiler.registerInfo(umpPrefix + "vein.ExcelExportHandler.export."+module,
-                    appName, false, true);
+//            callerInfo = Profiler.registerInfo(umpPrefix + "vein.ExcelExportHandler.export."+module,
+//                    appName, false, true);
         }
         long st = System.currentTimeMillis();
 
@@ -388,15 +385,17 @@ public class ExcelExportHandler implements InitializingBean {
             if(eventListener != null){
                 eventListener.handle(Event.exception,ctx,e);
             }
-        } catch (StorageClientException e) {
-            LOGGER.error(e.getMessage(),e);
-            succeed = false;
-            tip = "文件上传JFS异常,ex="+e.getMessage();
-            //回写事件信息
-            if(eventListener != null){
-                eventListener.handle(Event.exception,ctx,e);
-            }
-        } catch (Exception e) {
+        }
+//        catch (StorageClientException e) {
+//            LOGGER.error(e.getMessage(),e);
+//            succeed = false;
+//            tip = "文件上传JFS异常,ex="+e.getMessage();
+//            //回写事件信息
+//            if(eventListener != null){
+//                eventListener.handle(Event.exception,ctx,e);
+//            }
+//        }
+        catch (Exception e) {
             LOGGER.error(e.getMessage(),e);
             succeed = false;
             tip = "导出数据未知异常，ex="+e.getMessage();
@@ -434,12 +433,12 @@ public class ExcelExportHandler implements InitializingBean {
             }
 
             //ump 相关
-            if(callerInfo != null){
-                if(!succeed){
-                    Profiler.functionError(callerInfo);
-                }
-                Profiler.registerInfoEnd(callerInfo);
-            }
+//            if(callerInfo != null){
+//                if(!succeed){
+//                    Profiler.functionError(callerInfo);
+//                }
+//                Profiler.registerInfoEnd(callerInfo);
+//            }
         }
     }
 
@@ -450,7 +449,7 @@ public class ExcelExportHandler implements InitializingBean {
      * @param user
      * @return
      */
-    public  ProgressResult progress(String module,String user) {
+    public ProgressResult progress(String module, String user) {
         try {
             ProgressResult result = progressCtrlCenter.getProgress(module, user);
             if (result == null) {

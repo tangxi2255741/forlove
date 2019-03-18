@@ -1,6 +1,6 @@
 package com.txr.forlove.common.event;
 
-import com.jd.b2b.invoice.utils.MessageFormatter;
+import com.txr.forlove.common.utils.MessageFormatter;
 
 import java.util.Collections;
 import java.util.HashMap;

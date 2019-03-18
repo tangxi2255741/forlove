@@ -3,7 +3,8 @@
  */
 package com.txr.forlove.common.vein.task;
 
-import com.jd.ka.vein.domain.Context;
+
+import com.txr.forlove.common.vein.domain.Context;
 
 /**
  * <p> job的接口，对外提供执行的入口，和查询进度的功能 </p>

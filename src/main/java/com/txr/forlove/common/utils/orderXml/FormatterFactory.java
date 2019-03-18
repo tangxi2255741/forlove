@@ -1,11 +1,11 @@
 package com.txr.forlove.common.utils.orderXml;
 
 
-import org.apache.commons.lang.math.NumberUtils;
-import org.apache.http.annotation.ThreadSafe;
+import org.apache.commons.lang3.math.NumberUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.annotation.concurrent.ThreadSafe;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 

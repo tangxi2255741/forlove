@@ -1,7 +1,7 @@
 package com.txr.forlove.common.interceptor;
 
-import com.jd.b2b.restrictsale.cbi.common.handler.Context;
-import com.jd.b2b.restrictsale.exception.AppException;
+import com.txr.forlove.common.exception.AppException;
+import com.txr.forlove.common.vein.domain.Context;
 import org.springframework.core.Ordered;
 
 /**
