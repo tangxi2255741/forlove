@@ -12,6 +12,7 @@ import java.util.Currency;
 public abstract class Numbers {
 
     public static final BigDecimal _0_00_BigDecimal = new BigDecimal("0.00");
+
     public static Long toLong(String str, Long defaultValue) {
         if (str == null) {
             return defaultValue;
@@ -33,6 +34,7 @@ public abstract class Numbers {
             return defaultValue;
         }
     }
+
     public static BigDecimal nullToZero(BigDecimal value) {
         return value == null ? BigDecimal.ZERO : value;
     }

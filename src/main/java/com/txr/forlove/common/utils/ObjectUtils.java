@@ -1,6 +1,5 @@
 package com.txr.forlove.common.utils;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import com.txr.forlove.domain.User;
 import org.apache.commons.lang3.StringUtils;
 

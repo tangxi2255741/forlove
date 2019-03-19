@@ -230,4 +230,14 @@ public class IpUtils {
 		return ip;
 	}
 
+	public static void main(String[] args) {
+		System.out.println("getLocalIP : " + getLocalIP());
+//		System.out.println(getClientIp());
+		System.out.println("getIp : " + getIp());
+		System.out.println("getServerIP : " + getServerIP());
+		System.out.println("getServerName : " + getServerName());
+		System.out.println("getHostIP : " + getHostIP());
+		System.out.println("getLocalAddress : " + getLocalAddress());
+	}
+
 }

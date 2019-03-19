@@ -3,9 +3,7 @@ package com.txr.forlove.common.redis;
 import com.txr.forlove.common.constants.Separator;
 import com.txr.forlove.common.utils.StringUtil;
 
-/**
- * Created by zhangjunyong6 2018/12/18 13:55
- **/
+
 public class RedisKeyPre {
     /** cbi应用公共前缀 */
     public static final String CBI_KEY_PRE = "cbi";

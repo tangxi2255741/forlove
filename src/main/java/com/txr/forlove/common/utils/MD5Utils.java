@@ -1,5 +1,6 @@
 package com.txr.forlove.common.utils;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 
 import java.security.MessageDigest;
@@ -9,6 +10,7 @@ import java.security.MessageDigest;
  * 
  * @author cdduq 2013-10-9
  */
+@Slf4j
 public final class MD5Utils {
     
     private MD5Utils() {
@@ -28,6 +30,7 @@ public final class MD5Utils {
                 md.update(origin.getBytes("utf-8"));
                 return toHexString(md.digest());
             } catch (Exception e) {
+                log.error("useMD5 异常",e);
             }
         }
         return null;

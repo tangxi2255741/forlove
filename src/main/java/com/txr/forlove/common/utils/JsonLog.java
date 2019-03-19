@@ -41,14 +41,6 @@ public class JsonLog {
 	}
 	
 	private String toJson(Object src){
-		/*Gson gson = new GsonBuilder()  
-		  .setDateFormat("yyyy-MM-dd HH:mm:ss")
-		  .registerTypeHierarchyAdapter(Class.class, new ClassSerializer())
-		  .registerTypeHierarchyAdapter(byte[].class, new ByteArraySerializer())
-		  .registerTypeHierarchyAdapter(int[].class, new IntArraySerializer())
-		  .registerTypeHierarchyAdapter(Throwable.class, new ThrowableSerializer())
-		  .serializeNulls()
-		  .create(); */
 		try {
 			return gson.toJson(src);
 		} catch (Exception e) {

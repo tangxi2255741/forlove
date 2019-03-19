@@ -1,5 +1,6 @@
 package com.txr.forlove.common.utils;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
@@ -15,16 +16,14 @@ import java.util.Date;
 /**
  * Created by cdtangxi on 2017/8/22.
  */
+@Slf4j
 public class DateUtils {
-    private static final Logger LOGGER = LoggerFactory.getLogger(DateUtils.class);
     public static final String DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm:ss"; // 年-月-日 小时：分：秒
     public static final String DATE_FORMAT = "yyyy-MM-dd";// 年-月-日
     public static final String DATE_CH_FORMAT = "yyyy年MM月dd日";// yyyy年MM月dd日
     public static final String HHMM_FORMAT = "HH:mm";// 小时:分
     public static final String HHMMSS_FORMAT = "HH:mm:ss";// 小时:分:秒
     public static final String DATE_FORMAT_NEW = "yyyyMMdd";// 年月日数值
-    public static final String MAX_DATE = "2099-12-30 00:00:00";
-    public static final String MIN_DATE = "2000-00-00 00:00:00";
 
     /**
      * 返回某一天最后时刻的日期
@@ -78,7 +77,7 @@ public class DateUtils {
             SimpleDateFormat sdf = new SimpleDateFormat(format);
             return sdf.format(date);
         } catch (Exception e) {
-            LOGGER.warn("日期格式化失败.{}", e.getMessage());
+            log.warn("日期格式化失败.{}", e.getMessage());
         }
         return null;
     }
@@ -112,20 +111,12 @@ public class DateUtils {
         return DateTime.parse(dateString, DateTimeFormat.forPattern(DateUtils.DATE_TIME_FORMAT)).toDate();
     }
 
-    public static Date maxDate() {
-        return parseFromStr(MAX_DATE);
-    }
-
-    public static Date minDate() {
-        return parseFromStr(MIN_DATE);
-    }
-
     public static Date parseFromStr(String date) {
         DateFormat format = new SimpleDateFormat(DATE_TIME_FORMAT);
         try {
             return format.parse(date);
         } catch (ParseException e) {
-            LOGGER.error("时间转换异常", e);
+            log.error("时间转换异常", e);
         }
         return null;
     }
@@ -136,7 +127,6 @@ public class DateUtils {
         }
         return false;
     }
-
 
     public static Date addTime(Date srcDate, int filed, int mount) {
         if (srcDate == null){
@@ -154,36 +144,6 @@ public class DateUtils {
         return calendar.get(Calendar.DAY_OF_MONTH);
     }
 
-    public static Date getRepayDate(Integer repayDate) {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(new Date());
-        int currentDay = calendar.get(Calendar.DAY_OF_MONTH);
-        if (currentDay > repayDate) {
-            calendar.add(Calendar.MONTH, 1);
-        }
-        calendar.set(Calendar.DAY_OF_MONTH, repayDate);
-        calendar.add(Calendar.DAY_OF_MONTH, 1);
-        return toBeginDateTime(calendar.getTime());
-    }
-
-    public static Date getAccountDayBegin(int accountDay) {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(new Date());
-        calendar.set(Calendar.DAY_OF_MONTH, accountDay);
-        calendar.add(Calendar.MONTH, -1);
-        return toBeginDateTime(calendar.getTime());
-    }
-
-    public static Date getAccountDayEnd(int accountDay) {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(new Date());
-        calendar.set(Calendar.DAY_OF_MONTH, accountDay);
-        calendar.add(Calendar.DAY_OF_MONTH, -1);
-        return toLastDateTime(calendar.getTime());
-    }
-
     public static void main(String[] args) {
-        System.out.println(getAccountDayBegin(18));
-        System.out.println(getAccountDayEnd(18));
     }
 }

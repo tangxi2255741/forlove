@@ -2,9 +2,12 @@ package com.txr.forlove.common.utils;
 
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.util.CellRangeAddress;
+
+import static org.apache.poi.ss.usermodel.CellType.BLANK;
 
 /**
  * POI工具类 功能点：
@@ -98,24 +101,24 @@ public final class PoiUtil {
 		}
 		//处理单元格内容
 		switch (sourceCell.getCellType()) {
-//			case Cell.CELL_TYPE_STRING:
-//				targetCell.setCellValue(sourceCell.getRichStringCellValue());
-//				break;
-//			case Cell.CELL_TYPE_NUMERIC:
-//				targetCell.setCellValue(sourceCell.getNumericCellValue());
-//				break;
-//			case Cell.CELL_TYPE_BLANK:
-//				targetCell.setCellType(HSSFCell.CELL_TYPE_BLANK);
-//				break;
-//			case Cell.CELL_TYPE_BOOLEAN:
-//				targetCell.setCellValue(sourceCell.getBooleanCellValue());
-//				break;
-//			case Cell.CELL_TYPE_ERROR:
-//				targetCell.setCellErrorValue(sourceCell.getErrorCellValue());
-//				break;
-//			case Cell.CELL_TYPE_FORMULA:
-//				targetCell.setCellFormula(sourceCell.getCellFormula());
-//				break;
+			case STRING:
+				targetCell.setCellValue(sourceCell.getRichStringCellValue());
+				break;
+			case NUMERIC:
+				targetCell.setCellValue(sourceCell.getNumericCellValue());
+				break;
+			case BLANK:
+				targetCell.setCellType(BLANK);
+				break;
+			case BOOLEAN:
+				targetCell.setCellValue(sourceCell.getBooleanCellValue());
+				break;
+			case ERROR:
+				targetCell.setCellErrorValue(sourceCell.getErrorCellValue());
+				break;
+			case FORMULA:
+				targetCell.setCellFormula(sourceCell.getCellFormula());
+				break;
 			default:
 				break;
 		}

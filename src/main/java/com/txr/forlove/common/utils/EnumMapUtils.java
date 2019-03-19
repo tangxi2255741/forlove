@@ -3,6 +3,7 @@ package com.txr.forlove.common.utils;
 
 import com.txr.forlove.common.enums.DescType;
 import com.txr.forlove.common.enums.IntegerType;
+import com.txr.forlove.common.enums.StatusEnum;
 import com.txr.forlove.common.enums.StringType;
 
 import java.util.HashMap;
@@ -10,6 +11,8 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
+ * 枚举工具类
+ * 将枚举转换成map，方便通过key获取值
  * @author: T.X
  * @create: 2018-12-29 15:08
  **/
@@ -55,5 +58,10 @@ public class EnumMapUtils {
             STRING_KEY_MAP_HOLDER.put(enumClazz, map);
         }
         return map;
+    }
+
+    public static void main(String[] args) {
+        Map<Integer, String> map = toIntegerKeyMap(StatusEnum.class);
+        System.out.println(map);
     }
 }
