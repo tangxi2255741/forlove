@@ -6,27 +6,32 @@ import java.util.*;
 
 public class MyCollectionUtils {
 
-    public static <T> List<T> getSingleList(T item) {
-        if (item == null)
-        {
+    /**
+     * @description：对象转换为集合
+     * @param：
+     * @return：
+    **/
+    public static <T> List<T> transToSingleList(T item) {
+        if (item == null){
             return null;
         }
-
-        if (item instanceof String)
-        {
+        if (item instanceof String){
             String str = (String)item;
-            if (StringUtils.isBlank(str))
-            {
+            if (StringUtils.isBlank(str)){
                 return null;
             }
         }
-
         List<T> list = new ArrayList<T>();
         list.add(item);
         return list;
     }
 
-    public static <T> Set<T> getSingleSet(T item) {
+    /**
+     * @description：对象转换为set集合
+     * @param：
+     * @return：
+    **/
+    public static <T> Set<T> transToSingleSet(T item) {
         Set<T> set = new HashSet<T>();
         set.add(item);
         return set;
@@ -36,11 +41,9 @@ public class MyCollectionUtils {
         if (StringUtils.isBlank(str)) {
             return null;
         }
-
-        str = str.trim().replaceAll("(,)\\s+", "$1").replaceAll("\\s+(,)", "$1");
+        str = handleStr(str);
         String[] split = str.split(",");
         return Arrays.asList(split);
-
     }
 
     public static List<Long> transToLong(String str) {
@@ -56,13 +59,21 @@ public class MyCollectionUtils {
         return idList;
     }
 
-
+    /**
+     * @description：处理字符串的前后空格：222, 333, 444 ,555 - > 222,333,444,555
+     * @param：
+     * @return：
+    **/
     public static String handleStr(String str) {
         if (StringUtils.isBlank(str)) {
             return null;
         }
-
         return str.trim().replaceAll("(,)\\s+", "$1").replaceAll("\\s+(,)", "$1");
     }
 
+    public static void main(String[] args) {
+        String s = "222,333, 444 ,555";
+        System.out.println(transToStr(s));
+        System.out.println(handleStr(s));
+    }
 }

@@ -1,5 +1,7 @@
 package com.txr.forlove.common.enums;
 
+import java.util.Map;
+
 /**
  *@Description: 数据有效状态
  *@Author: T.X
@@ -34,5 +36,10 @@ public enum StatusEnum implements IntegerType,DescType{
     @Override
     public int getType() {
         return code;
+    }
+
+    public static void main(String[] args) {
+        Map<Integer, StatusEnum> map =  Enums.toMap(StatusEnum.values());
+        System.out.println(map);
     }
 }

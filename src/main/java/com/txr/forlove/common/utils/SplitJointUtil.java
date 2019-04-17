@@ -18,9 +18,9 @@ public class SplitJointUtil {
             StringBuilder builder = new StringBuilder(256);
             for (Object way : list) {
                 builder.append(way);
-                builder.append(Separator.COLUMN_VALUE_SEPARATOR);
+                builder.append(Separator.COMMA);
             }
-            builder.deleteCharAt(builder.lastIndexOf(Separator.COLUMN_VALUE_SEPARATOR));
+            builder.deleteCharAt(builder.lastIndexOf(Separator.COMMA));
             return builder.toString();
         }
         return null;
@@ -30,7 +30,7 @@ public class SplitJointUtil {
         if (StringUtils.isBlank(value)){
             return null;
         }
-        String[] values = value.split(Separator.COLUMN_VALUE_SEPARATOR);
+        String[] values = value.split(Separator.COMMA);
         List<T> list = new ArrayList<T>();
         for (String str: values) {
             list.add(JSON.parseObject(str, clazz));

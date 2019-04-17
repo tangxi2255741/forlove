@@ -1,13 +1,12 @@
 package com.txr.forlove.common.constants;
 
+
 /**
- * Created by zhangjunyong6 2018/12/20 11:45
- **/
+ *@Description:分隔符
+ *@Author:T.X
+ *@CreateTime:2019/4/17 - 15:39
+*/
 public class Separator {
-    public static final String COLUMN_VALUE_SEPARATOR = ",";
-
-    public static final String REDIS_KEY_LINK = "_";
-
     /**
      * 分隔符 -
      */

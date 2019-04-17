@@ -1,6 +1,5 @@
 package com.txr.forlove.common.utils;
 
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
@@ -16,8 +15,8 @@ import java.util.Date;
 /**
  * Created by cdtangxi on 2017/8/22.
  */
-@Slf4j
 public class DateUtils {
+    private static final Logger LOGGER = LoggerFactory.getLogger(DateUtils.class);
     public static final String DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm:ss"; // 年-月-日 小时：分：秒
     public static final String DATE_FORMAT = "yyyy-MM-dd";// 年-月-日
     public static final String DATE_CH_FORMAT = "yyyy年MM月dd日";// yyyy年MM月dd日
@@ -77,7 +76,7 @@ public class DateUtils {
             SimpleDateFormat sdf = new SimpleDateFormat(format);
             return sdf.format(date);
         } catch (Exception e) {
-            log.warn("日期格式化失败.{}", e.getMessage());
+            LOGGER.warn("日期格式化失败.{}", e.getMessage());
         }
         return null;
     }
@@ -116,7 +115,7 @@ public class DateUtils {
         try {
             return format.parse(date);
         } catch (ParseException e) {
-            log.error("时间转换异常", e);
+            LOGGER.error("时间转换异常", e);
         }
         return null;
     }
