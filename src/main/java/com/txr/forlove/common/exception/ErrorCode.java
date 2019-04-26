@@ -4,11 +4,9 @@
 package com.txr.forlove.common.exception;
 
 /**
- *
- * @author yanglei, cdyanglei5@jd.com
- * @version 1.0.1, 2018年8月1日
- * @since 2018年8月1日
- *
+ * @Description：错误码定义
+ * @Author：T.X
+ * @CreateTime：2019/4/25-10:50
  */
 public enum ErrorCode implements EnumCode<String>{
 	/** 成功 */

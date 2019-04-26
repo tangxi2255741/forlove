@@ -4,10 +4,9 @@ package com.txr.forlove.common.exception;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * 
- * @since 2017年10月16日
- * @author yanglei
- *
+ * @Description：外部接口调用异常
+ * @Author：T.X
+ * @CreateTime：2019/4/25-10:50
  */
 public abstract class RpcException extends AppException {
 

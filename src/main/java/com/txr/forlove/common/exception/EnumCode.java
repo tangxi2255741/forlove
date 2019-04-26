@@ -5,9 +5,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 枚举类代码接口
- *
- * @author qiulong
+ * @Description：枚举类代码接口
+ * @Author：T.X
+ * @CreateTime：2019/4/25-10:51
  */
 public interface EnumCode<T> {
 

@@ -19,8 +19,6 @@ public final class MD5Utils {
     
     /**
      * MD5加密字符串，UTF-8编码
-     * 
-     * @return
      */
     public static final String useMD5(String origin) {
         if (StringUtils.isNotBlank(origin)) {
@@ -38,9 +36,6 @@ public final class MD5Utils {
     
     /**
      * byte数组转换为16进制字符串
-     * 
-     * @param bytes
-     * @return
      */
     public static String toHexString(byte[] bytes) {
         StringBuilder str = new StringBuilder();

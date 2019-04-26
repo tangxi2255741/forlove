@@ -44,8 +44,16 @@ public class UUIDUtils {
             chars[i] = chars[j];
             i++;
         }
-
         return String.valueOf(chars, 0, i);
+    }
+
+    /**
+     * @description： UUID去掉-
+     * @param：
+     * @return：
+    **/
+    public static String getSimpleUuid(){
+        return UUID.randomUUID().toString().replaceAll("-", "");
     }
 
 }

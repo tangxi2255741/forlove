@@ -1,10 +1,9 @@
 package com.txr.forlove.common.exception;
 
 /**
- * 
- * @since 2017年10月31日
- * @author yanglei
- *
+ * @Description：错误信息
+ * @Author：T.X
+ * @CreateTime：2019/4/25-10:50
  */
 public enum ExtMessage {
     error_ware("错误商品列表"),

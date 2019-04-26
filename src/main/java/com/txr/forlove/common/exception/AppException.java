@@ -6,11 +6,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 异常
- * 
- * @since 2017年10月16日
- * @author yanglei
- *
+ * @Description：异常处理
+ * @Author：T.X
+ * @CreateTime：2019/4/25-10:51
  */
 public class AppException extends RuntimeException {
 	private static final long serialVersionUID = 6749840708411408254L;
