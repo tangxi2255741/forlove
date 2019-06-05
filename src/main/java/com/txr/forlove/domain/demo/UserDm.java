@@ -1,5 +1,7 @@
 package com.txr.forlove.domain.demo;
 
+import com.txr.forlove.domain.User;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +11,11 @@ public class UserDm {
     private String name;
     private String phone;
 
+    public UserDm(){}
+    public UserDm(Long id,String name){
+        this.id = id;
+        this.name = name;
+    }
     public static List<UserDm> createdList(int num){
         List<UserDm> list = new ArrayList<>();
         for(int i=0;i<num;i++){

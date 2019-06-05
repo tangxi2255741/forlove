@@ -11,6 +11,7 @@ import java.util.Map;
 public class ForEachDemo {
     private static final int BATCH_QUERY_SIZE = 100;
 
+    /** 分页获取list所有数据 */
     public static Map<Long, String> getAllByIds(List<Long> list){
         Assert.notEmpty(list,"list不能为空");
         Map<Long, String> result = new HashMap<>();
