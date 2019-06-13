@@ -20,9 +20,9 @@ public class JavaEightDemo {
     private static final Logger LOGGER = LoggerFactory.getLogger(JavaEightDemo.class);
 
     public static void main(String[] args) {
-        paralleStreamDemo();
+//        paralleStreamDemo();
         collectDemo();
-        optionalDemo();
+//        optionalDemo();
     }
 
 
@@ -77,6 +77,18 @@ public class JavaEightDemo {
                 .collect(Collectors.toList());
         // together = ["Virat","Dhoni","Jadeja","Warner","Watson","Smith"]
         LOGGER.info("together = {}", JSON.toJSONString(together));
+
+        List<Integer> intList = Arrays.asList(1,2,3,3,5,9,7,6);
+        System.out.println("intList = " + intList);
+        // distinct去重
+        intList = intList.stream().distinct().collect(Collectors.toList());
+        System.out.println("distinct intList = " + intList);
+        // sorted排序
+        intList = intList.stream().sorted().collect(Collectors.toList());
+        System.out.println("distinct sorted = " + intList);
+        // limit限制数量
+        intList = intList.stream().limit(3).collect(Collectors.toList());
+        System.out.println("distinct limit = " + intList);
     }
 
     private static void optionalDemo(){

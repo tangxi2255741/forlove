@@ -26,6 +26,12 @@
     </properties>
 
     <dependencies>
+<!--        http://www.ehcache.org/documentation/3.7/getting-started.html-->
+        <dependency>
+            <groupId>org.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+            <version>3.7.0</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
