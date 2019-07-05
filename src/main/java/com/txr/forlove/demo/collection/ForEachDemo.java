@@ -1,4 +1,4 @@
-package com.txr.forlove.demo.Collection;
+package com.txr.forlove.demo.collection;
 
 import org.springframework.util.Assert;
 import org.springframework.util.CollectionUtils;
